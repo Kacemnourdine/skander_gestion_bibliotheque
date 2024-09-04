@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}genre index{% endblock %}
+
+{% block body %}
+    <h1>genre index</h1>
+
+    <table class="table table-striped table-hovred">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for genre in genres %}
+            <tr>
+                <td>{{ genre.id }}</td>
+                <td>{{ genre.name }}</td>
+                
+                <td>
+                    <a href="{{ path('app_genre_show', {'id': genre.id}) }}" class='btn btn-success'>show</a>
+                    <a href="{{ path('app_genre_edit', {'id': genre.id}) }}" class='btn btn-warning'>edit</a>
+                    <a href="{{ path('app_genre_delete', {'id': genre.id}) }}" class='btn btn-danger'>delete</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_genre_new') }}" class="btn btn-primary">Create new</a>
+{% endblock %}

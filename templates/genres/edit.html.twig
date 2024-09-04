@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Genres{% endblock %}
+
+{% block body %}
+    <h1>Edit Genre</h1>
+    <a href="{{ path('app_genre_index') }}" class="btn btn-success">back to list</a>
+
+    {{ include('genres/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+{% endblock %}

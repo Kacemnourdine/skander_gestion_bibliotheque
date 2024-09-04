@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Author{% endblock %}
+
+{% block body %}
+    <h1>Edit Author</h1>
+
+    <a href="{{ path('app_author_index') }} " class="btn btn-success">back to list</a>
+
+    {{ include('author/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+{% endblock %}
